@@ -16,7 +16,7 @@ var cookieParser = require('cookie-parser');
 
 var client_id = '8aba65f64b0f40f59c8b63041de313a9'; // Your client id
 var client_secret = '4d8b246cf9e74acf9fafc8768cd966a3'; // Your secret
-var redirect_uri = 'https://spotifyplaylist-trackinfo.herokuapp.com/callback/'; // Your redirect uri
+var redirect_uri = 'https://spotifyplaylist-trackinfo.herokuapp.com/callback'; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -53,26 +53,15 @@ app.get('/login', function (req, res) {
     var state = generateRandomString(16);
     res.cookie(stateKey, state);
     // your application requests authorization
-    var scope = 'playlist-read-private playlist-read-collaborative playlist-modify-public playlist-modify-private streaming user-follow-modify user-follow-read user-library-read user-library-modify user-read-private user-read-birthdate user-read-email';
-    res.writeHead(302, {
-        'Location': encodeURI("https://accounts.spotify.com/authorize/?" +
-            querystring.stringify({
-                response_type: 'code',
-                client_id: client_id,
-                scope: scope,
-                redirect_uri: redirect_uri,
-                state: state
-            }))
-    });
-    res.send();
-    // res.redirect('https://accounts.spotify.com/authorize?' +
-    //     querystring.stringify({
-    //         response_type: 'code',
-    //         client_id: client_id,
-    //         scope: scope,
-    //         redirect_uri: redirect_uri,
-    //         state: state
-    //     }));
+    var scope = 'user-read-private user-read-email user-read-playback-state';
+    res.redirect('https://accounts.spotify.com/authorize?' +
+        querystring.stringify({
+            response_type: 'code',
+            client_id: client_id,
+            scope: scope,
+            redirect_uri: redirect_uri,
+            state: state
+        }));
 });
 
 app.get('/callback', function (req, res) {
