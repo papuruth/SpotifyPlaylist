@@ -1,0 +1,311 @@
+* {
+  color: #fff
+}
+
+div, button {
+  margin: 10px;
+}
+
+.container {
+  flex: 1
+}
+
+.playlist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.label {
+  display: flex;
+  flex-wrap: wrap;
+  color: #000;
+}
+
+.spotify-logo--text {
+  width: 131px;
+  height: 40px;
+}
+
+[dir=ltr] .navBar-header .logo {
+  padding-left: 24px;
+}
+
+.navBar-header .logo {
+  border: 0;
+  padding-bottom: 18px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+a, a:focus, a:hover {
+  text-decoration: none;
+}
+
+a {
+  margin-top: inherit;
+  color: #fff;
+  border-bottom: 1px solid transparent;
+}
+
+img {
+  vertical-align: middle;
+  margin-top: inherit;
+}
+
+.no-focus-outline .tracklist-row {
+  outline: none;
+}
+
+.tracklist-row {
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 4.56em;
+  list-style-type: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.tracklist-container1 {
+  -webkit-transform: translate(0);
+  transform: translate(0);
+}
+
+.tracklist-container {
+  align-self: auto;
+  position: relative;
+}
+
+.tracklist-container .tracklist {
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+.react-contextmenu-wrapper {
+  display: inline;
+}
+
+[draggable] {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.no-focus-outline .tracklist-row {
+  outline: none;
+}
+
+.tracklist-row {
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  list-style-type: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+[dir=ltr] .tracklist-col.position-outer {
+  text-align: right;
+  padding-right: 1em;
+}
+
+.tracklist-col.position-outer {
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+  letter-spacing: 0;
+  width: 2.5em;
+}
+
+.tracklist-col {
+  display: block;
+  height: 4.56em;
+}
+
+.tracklist-top-align {
+  margin-top: .7em;
+}
+
+.tracklist-play-pause {
+  color: #fff;
+  display: none;
+}
+
+.tracklist-row:hover .tracklist-play-pause {
+  color: #fff;
+  display: block;
+}
+
+.tracklist-top-align {
+  margin-top: .7em;
+}
+
+.tracklist-row:hover .tracklist-top-align.position {
+  display: none;
+}
+
+.tracklist-top-align.position {
+  margin-top: .75em;
+}
+
+.tracklist-row .position {
+  color: #fff;
+  opacity: .6;
+}
+
+.tracklist-top-align {
+  margin-top: .7em;
+}
+
+.tracklist-col.name {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 0;
+  overflow: hidden;
+  padding-right: 1px;
+  margin-right: -1px;
+}
+
+.tracklist-col {
+  display: block;
+  height: 4.56em;
+}
+
+.tracklist-top-align {
+  margin-top: .7em;
+}
+
+.ellipsis-one-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 1px;
+  padding-left: 5px;
+  margin-right: -1px;
+}
+
+.tracklist-name {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: .015em;
+  color: #fff;
+}
+
+.track-name-wrapper .second-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+[dir=ltr] .TrackListRow__explicit-label {
+  margin-right: .67em;
+}
+
+.TrackListRow__explicit-label {
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: .015em;
+  display: inline-block;
+  text-transform: uppercase;
+  background-color: hsla(0, 0%, 100%, .6);
+  color: #000;
+  border-radius: 2px;
+  padding: 0 .3em;
+}
+
+.react-contextmenu-wrapper {
+  display: inline;
+}
+
+.track-name-wrapper .tracklist-row__artist-name-link {
+  color: #fff;
+  opacity: .6;
+  -webkit-transition: opacity .2s linear;
+  transition: opacity .2s linear;
+}
+
+.track-name-wrapper .second-line-separator {
+  color: #fff;
+  opacity: .6;
+  display: inline-block;
+  font-size: .8em;
+  padding: 0 8px;
+}
+
+.track-name-wrapper .tracklist-row__album-name-link, .track-name-wrapper .tracklist-row__artist-name-link {
+  color: #fff;
+  opacity: .6;
+  -webkit-transition: opacity .2s linear;
+  transition: opacity .2s linear;
+}
+
+a:hover {
+  border-bottom: 1px solid #fff;
+}
+
+.tracklist-row:hover {
+  background: #1a2536;
+  height: auto;
+}
+
+[dir=ltr] .tracklist-col-duration {
+  text-align: right;
+  padding-right: 1em;
+}
+
+.tracklist-col-duration {
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+  letter-spacing: 0;
+  width: 3.9em;
+}
+
+.tracklist-col {
+  display: block;
+  height: 4.56em;
+}
+
+.tracklist-row .tracklist-duration {
+  color: #fff;
+  opacity: .6;
+}
+
+.tracklist-top-align {
+  margin-top: .7em;
+}
+
+.trackDetails {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
