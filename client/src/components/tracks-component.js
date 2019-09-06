@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
 import { SpotifyPlaylistAction } from '../redux/spotifyPlayList/spotify-playlist-actions';
 
 class AllTracksInfo extends Component {
@@ -43,7 +42,7 @@ class AllTracksInfo extends Component {
                                     <React.Fragment>
                                         {
                                             allTracks && <a href={allTracks.external_urls['spotify']}>
-                                                <img src={allTracks.images[0].url} />
+                                                <img src={allTracks.images[0].url} alt={allTracks.name}/>
                                             </a>
                                         }
                                         <h1 style={{ color: '#fff' }}>{allTracks.name}</h1>
@@ -61,42 +60,42 @@ class AllTracksInfo extends Component {
                                         <div className="react-contextmenu-wrapper" key={index}>
                                             <div draggable={true}>
                                                 <li className="tracklist-row" onClick={() => this.trackDetails(item)}>
-                                                    <div class="tracklist-col position-outer">
-                                                        <div class="tracklist-play-pause tracklist-top-align">
-                                                            <svg class="icon-play" viewBox="0 0 85 100">
+                                                    <div className="tracklist-col position-outer">
+                                                        <div className="tracklist-play-pause tracklist-top-align">
+                                                            <svg className="icon-play" viewBox="0 0 85 100">
                                                                 <path fill="currentColor" d="M81 44.6c5 3 5 7.8 0 10.8L9 98.7c-5 3-9 .7-9-5V6.3c0-5.7 4-8 9-5l72 43.3z">
                                                                     <title>PLAY</title>
                                                                 </path>
                                                             </svg>
                                                         </div>
-                                                        <div class="position tracklist-top-align">
-                                                            <i class="fa fa-music" aria-hidden="true"></i>
+                                                        <div className="position tracklist-top-align">
+                                                            <i className="fa fa-music" aria-hidden="true"></i>
                                                         </div>
                                                     </div>
-                                                    <div class="tracklist-col name">
-                                                        <div class="track-name-wrapper tracklist-top-align">
-                                                            <div class="tracklist-name ellipsis-one-line" dir="auto">{item.track.name}</div>
-                                                            <div class="second-line">
-                                                                <span class="TrackListRow__explicit-label">{item.track.explicit ? 'Explicit' : ''}</span>
-                                                                <span class="TrackListRow__artists ellipsis-one-line" dir="auto">
-                                                                    <span class="react-contextmenu-wrapper">
+                                                    <div className="tracklist-col name">
+                                                        <div className="track-name-wrapper tracklist-top-align">
+                                                            <div className="tracklist-name ellipsis-one-line" dir="auto">{item.track.name}</div>
+                                                            <div className="second-line">
+                                                                <span className="TrackListRow__explicit-label">{item.track.explicit ? 'Explicit' : ''}</span>
+                                                                <span className="TrackListRow__artists ellipsis-one-line" dir="auto">
+                                                                    <span className="react-contextmenu-wrapper">
                                                                         <span draggable="true">
-                                                                            <a tabIndex="-1" class="tracklist-row__artist-name-link" href={item.track.artists[0].external_urls.spotify}>{item.track.artists[0].name}</a>
+                                                                            <a tabIndex="-1" className="tracklist-row__artist-name-link" href={item.track.artists[0].external_urls.spotify}>{item.track.artists[0].name}</a>
                                                                         </span>
                                                                     </span>
                                                                 </span>
-                                                                <span class="second-line-separator" aria-label="in album">•</span>
-                                                                <span class="TrackListRow__album ellipsis-one-line" dir="auto">
-                                                                    <span class="react-contextmenu-wrapper"><span draggable="true">
-                                                                        <a tabIndex="-1" class="tracklist-row__album-name-link" href={item.track.album.external_urls.spotify}>{item.track.album.name}</a>
+                                                                <span className="second-line-separator" aria-label="in album">•</span>
+                                                                <span className="TrackListRow__album ellipsis-one-line" dir="auto">
+                                                                    <span className="react-contextmenu-wrapper"><span draggable="true">
+                                                                        <a tabIndex="-1" className="tracklist-row__album-name-link" href={item.track.album.external_urls.spotify}>{item.track.album.name}</a>
                                                                     </span>
                                                                     </span>
                                                                 </span>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="tracklist-col tracklist-col-duration">
-                                                        <div class="tracklist-duration tracklist-top-align">
+                                                    <div className="tracklist-col tracklist-col-duration">
+                                                        <div className="tracklist-duration tracklist-top-align">
                                                             <span>{(item.track.duration_ms/60000).toFixed(2)}</span>
                                                         </div>
                                                     </div>
