@@ -53,15 +53,26 @@ app.get('/login', function (req, res) {
     var state = generateRandomString(16);
     res.cookie(stateKey, state);
     // your application requests authorization
-    var scope = 'user-read-private user-read-email user-read-playback-state';
-    res.redirect('https://accounts.spotify.com/authorize?' +
-        querystring.stringify({
-            response_type: 'code',
-            client_id: client_id,
-            scope: scope,
-            redirect_uri: redirect_uri,
-            state: state
-        }));
+    var scope = 'playlist-read-private playlist-read-collaborative playlist-modify-public playlist-modify-private streaming user-follow-modify user-follow-read user-library-read user-library-modify user-read-private user-read-birthdate user-read-email';
+    res.writeHead(302, {
+        'Location': encodeURI("https://accounts.spotify.com/authorize/?" +
+            querystring.stringify({
+                response_type: 'code',
+                client_id: client_id,
+                scope: scope,
+                redirect_uri: redirect_uri,
+                state: state
+            }))
+    });
+    res.send();
+    // res.redirect('https://accounts.spotify.com/authorize?' +
+    //     querystring.stringify({
+    //         response_type: 'code',
+    //         client_id: client_id,
+    //         scope: scope,
+    //         redirect_uri: redirect_uri,
+    //         state: state
+    //     }));
 });
 
 app.get('/callback', function (req, res) {
