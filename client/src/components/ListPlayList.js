@@ -11,7 +11,8 @@ class ListPlayList extends Component {
             playlists: [],
             countryInfo: '',
             token: token,
-            message: ''
+            message: '',
+            count: 0
         }
     }
 
@@ -49,7 +50,14 @@ class ListPlayList extends Component {
                 const { token } = this.state
                 const { country, locale } = this.state.countryInfo
                 const { dispatch } = this.props;
-                dispatch(SpotifyPlaylistAction.SpotifyPlaylist(token, country, locale))
+                if (this.state.count < 1) {
+                    dispatch(SpotifyPlaylistAction.SpotifyPlaylist(token, country, locale))
+                    this.setState(state => {
+                        return {
+                            count: state.count + 1
+                        }
+                    })
+                }
             }
         } catch (error) {
             console.log(error.message)
