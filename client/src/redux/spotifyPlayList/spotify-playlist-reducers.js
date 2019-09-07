@@ -33,7 +33,6 @@ export function SpotifyPlaylistData(state = initialState, action) {
                 ...state
             };
         case spotifyPlaylistConstants.GET_SPOTIFY_PLAYLIST_SUCCESS:
-            console.log(action.data)
             return {
                 ...state,
                 message: action.data.message,
@@ -56,7 +55,6 @@ export function AllTracksData(state = initialState, action) {
                 ...state
             };
         case spotifyPlaylistConstants.GET_PLAYLIST_TRACKS_SUCCESS:
-            console.log(action.data)
             return {
                 ...state,
                 allTracks: action.data,

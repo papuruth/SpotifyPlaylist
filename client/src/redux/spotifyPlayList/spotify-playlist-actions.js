@@ -44,7 +44,6 @@ function AllTracks(token, api) {
         dispatch(request());
         SpotifyPlaylistService.AllTracks(token,api)
             .then((data) => {
-                console.log(data)
                 dispatch(success(data))
             })
             .catch((error) => {

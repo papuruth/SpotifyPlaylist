@@ -14,4 +14,4 @@ render(
     </Provider>,
     document.getElementById('root')
 );
-serviceWorker.register();
+serviceWorker.unregister();

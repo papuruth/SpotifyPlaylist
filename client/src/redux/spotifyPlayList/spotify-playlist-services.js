@@ -45,7 +45,6 @@ async function AllTracks(token, api) {
                 'Authorization': 'Bearer ' + token
             }
         });
-        console.log(data.data);
         return data.data;
     }
     catch (error) {

@@ -26,8 +26,6 @@ class AllTracksInfo extends Component {
     render() {
         try {
             const { allTracks } = this.state;
-            const playlist_thumbnail = allTracks.external_urls.spotify
-            console.log(playlist_thumbnail)
             return (
                 <div className="container">
                     <div className="row" style={{ background: '#000' }}>
@@ -55,7 +53,6 @@ class AllTracksInfo extends Component {
                         <ol className="tracklist">
                             {
                                 allTracks && allTracks.tracks.items.map((item, index) => {
-                                    console.log(item)
                                     return (
                                         <div className="react-contextmenu-wrapper" key={index}>
                                             <div draggable={true}>
