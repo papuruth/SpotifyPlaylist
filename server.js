@@ -1,5 +1,4 @@
 /**
- * This is an example of a basic node.js script that performs
  * the Authorization Code oAuth2 flow to authenticate against
  * the Spotify Accounts.
  *
@@ -37,8 +36,6 @@ var stateKey = 'spotify_auth_state';
 
 var app = express();
 app.use(express.static(path.join(__dirname, "client", "build")))
-
-// app.use(express.static(__dirname + '/public'));
 app.use(cors())
 app.use(cookieParser());
 
