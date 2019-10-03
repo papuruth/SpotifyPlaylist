@@ -11,6 +11,6 @@
     "request": "~2.83.0"
   },
   "scripts": {
-    "start": "node server.js && cd client && npm run build",
+    "start": "node server.js && cd client",
   }
 }
