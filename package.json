@@ -11,6 +11,7 @@
     "request": "~2.83.0"
   },
   "scripts": {
-    "start": "node server.js && cd client",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   }
 }
