@@ -11,8 +11,6 @@
     "request": "~2.83.0"
   },
   "scripts": {
-    "client": "react-scripts start",
-    "server": "nodemon node server.js",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server.js && cd client && npm run build",
   }
 }
