@@ -3,7 +3,8 @@ import axios from 'axios'
 export const SpotifyPlaylistService = {
     CountryInfo,
     SpotifyPlaylist,
-    AllTracks
+    AllTracks,
+    Search
 }
 
 async function CountryInfo(params) {
@@ -35,6 +36,10 @@ async function SpotifyPlaylist(token, country, locale) {
     }
     catch (error) {
         console.log(error.message);
+        sessionStorage.removeItem('token');
+        if(error.message.includes('401')) {
+            alert('Token expired\nGoto home and refresh token.');
+         }
     }
 }
 
@@ -49,5 +54,27 @@ async function AllTracks(token, api) {
     }
     catch (error) {
         console.log(error.message);
+        sessionStorage.removeItem('token');
+        if(error.message.includes('401')) {
+            alert('Token expired\nGoto home and refresh token.');
+         }
+    }
+}
+
+async function Search(query, token) {
+    try {
+        const data = await axios.get(`https://api.spotify.com/v1/search?${query}`, {
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        });
+        return data.data;
+    }
+    catch (error) {
+        console.log(error.message);
+        sessionStorage.removeItem('token');
+        if(error.message.includes('401')) {
+            alert('Token expired\nGoto home and refresh token.');
+         }
     }
 }

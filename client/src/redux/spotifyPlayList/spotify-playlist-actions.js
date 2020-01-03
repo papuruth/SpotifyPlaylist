@@ -4,7 +4,8 @@ import { SpotifyPlaylistService } from "./spotify-playlist-services";
 export const SpotifyPlaylistAction =  {
     SpotifyPlaylist,
     CountryInfo,
-    AllTracks
+    AllTracks,
+    Search
 }
 
 function CountryInfo(params) {
@@ -53,4 +54,20 @@ function AllTracks(token, api) {
     function request() { return { type: spotifyPlaylistConstants.GET_PLAYLIST_TRACKS_REQUEST} }
     function success(data) { return { type: spotifyPlaylistConstants.GET_PLAYLIST_TRACKS_SUCCESS, data } }
     function failure(error) { return { type: spotifyPlaylistConstants.GET_PLAYLIST_TRACKS_FAILURE, error } }
+}
+
+function Search(query, token) {
+    return dispatch => {
+        dispatch(request());
+        SpotifyPlaylistService.Search(query, token)
+            .then((data) => {
+                dispatch(success(data))
+            })
+            .catch((error) => {
+                dispatch(failure(error));
+            })
+    };
+    function request() { return { type: spotifyPlaylistConstants.SEARCH_SPOTIFY_REQUEST} }
+    function success(data) { return { type: spotifyPlaylistConstants.SEARCH_SPOTIFY_SUCCESS, data } }
+    function failure(error) { return { type: spotifyPlaylistConstants.SEARCH_SPOTIFY_FAILURE, error } }
 }

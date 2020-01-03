@@ -3,7 +3,8 @@ import { spotifyPlaylistConstants } from "./spotify-playlist-constants";
 const initialState = {
     countryInfo: null,
     spotifyPlaylist: [],
-    allTracks: []
+    allTracks: [],
+    searchedData: []
 }
 
 export function CountryInfo(state = initialState, action) {
@@ -63,6 +64,27 @@ export function AllTracksData(state = initialState, action) {
             return {
                 ...state,
                 allTracks: []
+            };
+        default:
+            return state
+    }
+}
+
+export function SearchSpotify(state = initialState, action) {
+    switch (action.type) {
+        case spotifyPlaylistConstants.SEARCH_SPOTIFY_REQUEST:
+            return {
+                ...state
+            };
+        case spotifyPlaylistConstants.SEARCH_SPOTIFY_SUCCESS:
+            return {
+                ...state,
+                searchedData: action.data ? action.data : [],
+            };
+        case spotifyPlaylistConstants.SEARCH_SPOTIFY_FAILURE:
+            return {
+                ...state,
+                searchedData: []
             };
         default:
             return state
