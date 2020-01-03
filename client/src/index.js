@@ -6,6 +6,7 @@ import { Router } from 'react-router-dom'
 import { store } from './store';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
 render(
     <Provider store={store}>
         <Router history={history}>
