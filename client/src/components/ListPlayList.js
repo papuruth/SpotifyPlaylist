@@ -86,7 +86,7 @@ class ListPlayList extends Component {
                 {
                     !this.state.token && <div className="row">
                         <div className="col-sm-12">
-                            <a href='http://localhost:3001/login' className="form-control btn1 btn btn-primary" > Login to Spotify </a>
+                            <a href='https://spotifyplaylist-trackinfo.herokuapp.com/login' className="form-control btn1 btn btn-primary" > Login to Spotify </a>
                         </div>
                     </div>
                 }
